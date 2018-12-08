@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'discordfont';
+  src: url(../fonts/discord.ttf) format('truetype');
+}
+
+.navbar-item {
+  font-family: discordfont;
+  font-size: 20px;
+  font-weight: 100 !important;
+}
+
 .menu {
   padding: 20px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
