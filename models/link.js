@@ -9,15 +9,29 @@ db.defaults({ links: [], count: 0 })
   .write()
 
 // Get all entries
-exports.get = () => (
+exports.getAll = () => (
   db.get('links')
     .value()
 )
 
-// Add a link
-exports.post = (title, url) => (
+exports.get = (id) => (
   db.get('links')
-    .push({ id: db.get('count') + 1, title: title, url: url })
+    .find({ id: id })
+    .value()
+)
+
+// Add a link
+exports.post = (title, url, description) => (
+  db.get('links')
+    .push({ id: db.get('count') + 1, title: title, url: url, description: description })
+    .write()
+)
+
+// Update a link
+exports.update = (id, title, url, description) => (
+  db.get('links')
+    .find({ id: id })
+    .assign({ title: title, url: url, description: description })
     .write()
 )
 

@@ -1,0 +1,52 @@
+{{> navbar}}
+
+<div class="columns is-marginless">
+  {{!-- Sidebar --}}
+  <div class="column is-2 is-paddingless">
+    {{> sidebar}}
+  </div>
+
+  {{!-- Page content --}}
+  <div class="column is-10 is-paddingless">
+    <div class="container">
+
+      {{!-- Add section --}}
+      <div class="box content">
+        <h4>Add a link</h4>
+        <form action="/manage/add" method="post">
+          {{!-- Title --}}
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="My awesome title" name="title">
+            </div>
+          </div>
+          {{!-- Url --}}
+          <div class="field">
+            <label class="label">Url</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="https://example.com" name="url">
+            </div>
+          </div>
+          {{!-- Desciption --}}
+          <div class="field">
+            <label class="label">Description <small>(optional)</small></label>
+            <div class="control">
+              <textarea class="textarea has-fixed-size" placeholder="e.g. Hello world" name="description"></textarea>
+            </div>
+          </div>
+          {{!-- Action area --}}
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" type="submit">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-text" type="reset">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

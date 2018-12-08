@@ -1,31 +1,55 @@
-<h2>Ajouter</h2>
-<form action="/add" method="post">
-  <label for="titleInput">Title</label>
-  <input type="text" name="title" id="titleInput">
-  <label for="urlInput">Url</label>
-  <input type="text" name="url" id="urlInput">
-  <button type="submit">Add</button>
-</form>
+{{> navbar}}
 
-<h2>Supprimer</h2>
-<form action="/delete" method="post">
-  <label for="idInput">ID</label>
-  <input type="number" name="id" id="idInput">
-  <button type="submit">Delete</button>
-</form>
+<div class="columns is-marginless">
+  {{!-- Sidebar --}}
+  <div class="column is-2 is-paddingless">
+    {{> sidebar}}
+  </div>
 
-<h2>Link list</h2>
-<table>
-  <thead>
-    <th>Title</th>
-    <td>Link</td>
-  </thead>
-  <tbody>
-    {{#each links}}
-    <tr>
-      <td>{{title}}</td>
-      <td>{{url}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+  {{!-- Page content --}}
+  <div class="column is-10 is-paddingless">
+    <div class="container">
+
+      {{!-- List section --}}
+      <div class="box content">
+        <h4>Link list</h4>
+        <table class="table">
+          {{!-- Header --}}
+          <thead>
+            <th style="width: 150px;">Title</th>
+            <th>Desciption</th>
+            <th class="has-text-centered" style="width: 90px;">Edit</th>
+          </thead>
+          {{!-- Body --}}
+          <tbody>
+            {{#each links}}
+            <tr>
+              <td>
+                <a href="{{url}}" target="_blank" rel="noopener noreferrer">{{title}}</a>
+              </td>
+              <td>
+                {{description}}
+              </td>
+              <td class="has-text-centered">
+                {{!-- Edit button --}}
+                <a href="manage/edit?id={{id}}">
+                  <button class="button is-small is-link">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                </a>
+                {{!-- Delete button --}}
+                <a href="manage/delete?id={{id}}">
+                  <button class="button is-small is-danger">
+                    <i class="fa fa-close"></i>
+                  </button>
+                </a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

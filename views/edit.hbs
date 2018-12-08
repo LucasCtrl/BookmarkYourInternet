@@ -1,0 +1,49 @@
+{{> navbar}}
+
+<div class="columns is-marginless">
+  {{!-- Sidebar --}}
+  <div class="column is-2 is-paddingless">
+    {{> sidebar}}
+  </div>
+
+  {{!-- Page content --}}
+  <div class="column is-10 is-paddingless">
+    <div class="container">
+
+      {{!-- Edit section --}}
+      <div class="box content">
+        <h4>Edit a link</h4>
+        <form action="/manage/update?id={{data.id}}" method="post">
+          {{!-- Title --}}
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input class="input" type="text" value="{{data.title}}" name="title">
+            </div>
+          </div>
+          {{!-- Url --}}
+          <div class="field">
+            <label class="label">Url</label>
+            <div class="control">
+              <input class="input" type="text" value="{{data.url}}" name="url">
+            </div>
+          </div>
+          {{!-- Desciption --}}
+          <div class="field">
+            <label class="label">Description <small>(optional)</small></label>
+            <div class="control">
+              <textarea class="textarea has-fixed-size" name="description">{{data.description}}</textarea>
+            </div>
+          </div>
+          {{!-- Action area --}}
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
