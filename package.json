@@ -1,6 +1,6 @@
 {
   "name": "bookmarkyourinternet",
-  "displayName": "bookmarkYourInternet",
+  "displayName": "BookmarkYourInternet",
   "version": "1.0.0",
   "description": "A minimalist bookmarking service",
   "main": "app.js",
