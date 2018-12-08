@@ -1,0 +1,31 @@
+<h2>Ajouter</h2>
+<form action="/add" method="post">
+  <label for="titleInput">Title</label>
+  <input type="text" name="title" id="titleInput">
+  <label for="urlInput">Url</label>
+  <input type="text" name="url" id="urlInput">
+  <button type="submit">Add</button>
+</form>
+
+<h2>Supprimer</h2>
+<form action="/delete" method="post">
+  <label for="idInput">ID</label>
+  <input type="number" name="id" id="idInput">
+  <button type="submit">Delete</button>
+</form>
+
+<h2>Link list</h2>
+<table>
+  <thead>
+    <th>Title</th>
+    <td>Link</td>
+  </thead>
+  <tbody>
+    {{#each links}}
+    <tr>
+      <td>{{title}}</td>
+      <td>{{url}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
