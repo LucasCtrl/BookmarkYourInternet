@@ -43,9 +43,35 @@
             </div>
           </div>
         </form>
-        {{#each customStylesheet}}
-          {{this}}
-        {{/each}}
+
+        {{!-- Custom style list --}}
+        {{#if customStylesheet}}
+        <table class="table">
+          {{!-- Header --}}
+          <thead>
+            <th style="width: 170px;">Style</th>
+            <th class="has-text-centered" style="width: 90px;">Edit</th>
+          </thead>
+          {{!-- Body --}}
+          <tbody>
+            {{#each customStylesheet}}
+            <tr>
+              <td>
+                {{link}}
+              </td>
+              <td class="has-text-centered">
+                {{!-- Delete button --}}
+                <a href="customization/delete?name={{name}}">
+                  <button class="button is-small is-danger">
+                    <i class="fa fa-close"></i>
+                  </button>
+                </a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/if}}
       </div>
 
     </div>

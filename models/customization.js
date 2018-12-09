@@ -17,13 +17,13 @@ exports.getAll = () => (
 // Add a stylesheet
 exports.post = (name) => (
   db.get('stylesheets')
-    .push('/db/css/' + name)
+    .push({ link: '/db/css/' + name, name: name })
     .write()
 )
 
 // Delete a stylesheet
 exports.delete = (name) => (
   db.get('stylesheets')
-    .pull('/db/css/' + name)
+    .remove({ link: '/db/css/' + name })
     .write()
 )
