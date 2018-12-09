@@ -1,8 +1,9 @@
 const router = require('express').Router()
 const Link = require('../models/link')
+const Customization = require('../models/customization')
 
 router.get('/', function (req, res) {
-  res.render('manage')
+  res.render('manage', { customStylesheet: Customization.getAll() })
 })
 
 router.post('/add', function (req, res) {
@@ -16,7 +17,7 @@ router.post('/add', function (req, res) {
 
 router.get('/edit', function (req, res) {
   var id = Number(req.query.id)
-  res.render('edit', { data: Link.get(id) })
+  res.render('edit', { customStylesheet: Customization.getAll(), data: Link.get(id) })
 })
 
 router.post('/update', function (req, res) {

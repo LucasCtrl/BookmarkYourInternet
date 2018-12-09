@@ -18,3 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 })
+
+// Modify upload button content with filename when we choose it
+var file = document.getElementById('cssFile')
+file.onchange = function () {
+  if (file.files.length > 0) {
+    document.getElementById('cssFilename').innerHTML = file.files[0].name
+  }
+}

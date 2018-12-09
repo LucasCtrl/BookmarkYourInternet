@@ -1,0 +1,53 @@
+{{> navbar}}
+
+<div class="columns is-marginless">
+  {{!-- Sidebar --}}
+  <div class="column is-2 is-paddingless">
+    {{> sidebar}}
+  </div>
+
+  {{!-- Page content --}}
+  <div class="column is-10 is-paddingless">
+    <div class="container">
+
+      {{!-- Add section --}}
+      <div class="box content">
+        <h4>Customize you application</h4>
+        <form action="/customization/add" method="post" encType="multipart/form-data">
+          {{!-- File --}}
+          <div class="field">
+            <div class="file has-name is-boxed">
+              <label class="file-label">
+                <input class="file-input" type="file" name="cssFile" id="cssFile">
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fa fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    Choose a file…
+                  </span>
+                </span>
+                <span class="file-name" id="cssFilename">
+                  Choose a file...
+                </span>
+              </label>
+            </div>
+          </div>
+          {{!-- Action area --}}
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" type="submit">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-text" type="reset">Cancel</button>
+            </div>
+          </div>
+        </form>
+        {{#each customStylesheet}}
+          {{this}}
+        {{/each}}
+      </div>
+
+    </div>
+  </div>
+</div>
