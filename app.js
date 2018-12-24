@@ -23,4 +23,4 @@ app.use(fileUpload())
 
 app.use(require('./controllers'))
 
-app.listen(config.port)
+app.listen(config.port, () => console.log(`BookmarkYourInternet listening on port ${config.port}!`))
