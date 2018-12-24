@@ -1,7 +1,7 @@
 {
   "name": "bookmarkyourinternet",
   "displayName": "BookmarkYourInternet",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "description": "A minimalist bookmarking service",
   "main": "app.js",
   "repository": "https://github.com/LucasCtrl/bookmarkYourInternet",

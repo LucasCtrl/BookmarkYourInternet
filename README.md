@@ -10,6 +10,8 @@
 
 ## Installation
 
+If you need help to install BookmarkYourInternet, join us on [our discord server](https://discord.gg/nEDcagb)
+
 ```sh
 npm install
 # or
@@ -28,6 +30,9 @@ yarn start
 Then, go to the following link: `localhost:PORT`
 
 ## Release History
+
+* 0.2.1
+    * Everything is now responsive
 
 * 0.2.0
     * Adding a system to add custom styles
